@@ -12,7 +12,18 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+//        let logo = UIImage(named: "logo")
+//        let imageView = UIImageView(image:logo)
+//        self.navigationItem.titleView = imageView
+        let logoContainer = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        imageView.contentMode = .scaleAspectFit
+        let image = UIImage(named: "logo")
+        imageView.image = image
+        logoContainer.addSubview(imageView)
+        navigationItem.titleView = logoContainer
     }
 
     override func didReceiveMemoryWarning() {
